@@ -158,6 +158,23 @@ export const deposit =  {
             gaugeInfo: sts.option(() => sts.tuple(() => [sts.bigint(), sts.number()])),
         })
     ),
+    /**
+     * Deposit the pool.
+     * 
+     * Mint the share to the exchanger and transfer the tokens to the pool. The state of the
+     * pool should be `Ongoing` or `Charged`. The current block number should be greater than
+     * or equal to the field `after_block_to_start` if the state of the pool is `Charged`.
+     * 
+     * - `pid`: The pool id.
+     * - `add_value`: The value to deposit.
+     */
+    v14000: new CallType(
+        'Farming.deposit',
+        sts.struct({
+            pid: sts.number(),
+            addValue: sts.bigint(),
+        })
+    ),
 }
 
 export const withdraw =  {

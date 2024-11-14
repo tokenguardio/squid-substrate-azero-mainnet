@@ -18,6 +18,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.mint.v990.decode(call);
       } else if (vtokenMinting.mint.v992.is(call)) {
         return vtokenMinting.mint.v992.decode(call);
+      } else if (vtokenMinting.mint.v14000.is(call)) {
+        return vtokenMinting.mint.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -30,6 +32,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.redeem.v980.decode(call);
       } else if (vtokenMinting.redeem.v990.is(call)) {
         return vtokenMinting.redeem.v990.decode(call);
+      } else if (vtokenMinting.redeem.v14000.is(call)) {
+        return vtokenMinting.redeem.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -42,6 +46,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.rebond.v980.decode(call);
       } else if (vtokenMinting.rebond.v990.is(call)) {
         return vtokenMinting.rebond.v990.decode(call);
+      } else if (vtokenMinting.rebond.v14000.is(call)) {
+        return vtokenMinting.rebond.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -54,6 +60,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.rebondByUnlockId.v980.decode(call);
       } else if (vtokenMinting.rebondByUnlockId.v990.is(call)) {
         return vtokenMinting.rebondByUnlockId.v990.decode(call);
+      } else if (vtokenMinting.rebondByUnlockId.v14000.is(call)) {
+        return vtokenMinting.rebondByUnlockId.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -68,6 +76,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.setUnlockDuration.v980.decode(call);
       } else if (vtokenMinting.setUnlockDuration.v990.is(call)) {
         return vtokenMinting.setUnlockDuration.v990.decode(call);
+      } else if (vtokenMinting.setUnlockDuration.v14000.is(call)) {
+        return vtokenMinting.setUnlockDuration.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -80,6 +90,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.setMinimumMint.v980.decode(call);
       } else if (vtokenMinting.setMinimumMint.v990.is(call)) {
         return vtokenMinting.setMinimumMint.v990.decode(call);
+      } else if (vtokenMinting.setMinimumMint.v14000.is(call)) {
+        return vtokenMinting.setMinimumMint.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -92,6 +104,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.setMinimumRedeem.v980.decode(call);
       } else if (vtokenMinting.setMinimumRedeem.v990.is(call)) {
         return vtokenMinting.setMinimumRedeem.v990.decode(call);
+      } else if (vtokenMinting.setMinimumRedeem.v14000.is(call)) {
+        return vtokenMinting.setMinimumRedeem.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -104,6 +118,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.addSupportRebondToken.v980.decode(call);
       } else if (vtokenMinting.addSupportRebondToken.v990.is(call)) {
         return vtokenMinting.addSupportRebondToken.v990.decode(call);
+      } else if (vtokenMinting.addSupportRebondToken.v14000.is(call)) {
+        return vtokenMinting.addSupportRebondToken.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -116,6 +132,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.removeSupportRebondToken.v980.decode(call);
       } else if (vtokenMinting.removeSupportRebondToken.v990.is(call)) {
         return vtokenMinting.removeSupportRebondToken.v990.decode(call);
+      } else if (vtokenMinting.removeSupportRebondToken.v14000.is(call)) {
+        return vtokenMinting.removeSupportRebondToken.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -140,6 +158,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.setUnlockingTotal.v980.decode(call);
       } else if (vtokenMinting.setUnlockingTotal.v990.is(call)) {
         return vtokenMinting.setUnlockingTotal.v990.decode(call);
+      } else if (vtokenMinting.setUnlockingTotal.v14000.is(call)) {
+        return vtokenMinting.setUnlockingTotal.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -154,6 +174,8 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
         return vtokenMinting.setMinTimeUnit.v980.decode(call);
       } else if (vtokenMinting.setMinTimeUnit.v990.is(call)) {
         return vtokenMinting.setMinTimeUnit.v990.decode(call);
+      } else if (vtokenMinting.setMinTimeUnit.v14000.is(call)) {
+        return vtokenMinting.setMinTimeUnit.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
@@ -166,24 +188,38 @@ export function normalizeVtokenMintingCallsArgs(call: Call): any {
     case vtokenMinting.mintWithLock.name:
       if (vtokenMinting.mintWithLock.v10000.is(call)) {
         return vtokenMinting.mintWithLock.v10000.decode(call);
+      } else if (vtokenMinting.mintWithLock.v14000.is(call)) {
+        return vtokenMinting.mintWithLock.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
     case vtokenMinting.unlockIncentiveMintedVtoken.name:
       if (vtokenMinting.unlockIncentiveMintedVtoken.v10000.is(call)) {
         return vtokenMinting.unlockIncentiveMintedVtoken.v10000.decode(call);
+      } else if (vtokenMinting.unlockIncentiveMintedVtoken.v14000.is(call)) {
+        return vtokenMinting.unlockIncentiveMintedVtoken.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
     case vtokenMinting.setIncentiveCoef.name:
       if (vtokenMinting.setIncentiveCoef.v10000.is(call)) {
         return vtokenMinting.setIncentiveCoef.v10000.decode(call);
+      } else if (vtokenMinting.setIncentiveCoef.v14000.is(call)) {
+        return vtokenMinting.setIncentiveCoef.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }
     case vtokenMinting.setVtokenIncentiveLockBlocks.name:
       if (vtokenMinting.setVtokenIncentiveLockBlocks.v10000.is(call)) {
         return vtokenMinting.setVtokenIncentiveLockBlocks.v10000.decode(call);
+      } else if (vtokenMinting.setVtokenIncentiveLockBlocks.v14000.is(call)) {
+        return vtokenMinting.setVtokenIncentiveLockBlocks.v14000.decode(call);
+      } else {
+        throw new UnknownCallVersionError(call.name);
+      }
+    case vtokenMinting.setOngoingTimeUnit.name:
+      if (vtokenMinting.setOngoingTimeUnit.v14000.is(call)) {
+        return vtokenMinting.setOngoingTimeUnit.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }

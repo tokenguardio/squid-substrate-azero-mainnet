@@ -37,6 +37,55 @@ export interface TimeUnit_SlashingSpan {
     value: number
 }
 
+export const RedeemTo: sts.Type<RedeemTo> = sts.closedEnum(() => {
+    return  {
+        Astar: AccountId32,
+        Hydradx: AccountId32,
+        Interlay: AccountId32,
+        Manta: AccountId32,
+        Moonbeam: H160,
+        Native: AccountId32,
+    }
+})
+
+export const H160 = sts.bytes()
+
+export type RedeemTo = RedeemTo_Astar | RedeemTo_Hydradx | RedeemTo_Interlay | RedeemTo_Manta | RedeemTo_Moonbeam | RedeemTo_Native
+
+export interface RedeemTo_Astar {
+    __kind: 'Astar'
+    value: AccountId32
+}
+
+export interface RedeemTo_Hydradx {
+    __kind: 'Hydradx'
+    value: AccountId32
+}
+
+export interface RedeemTo_Interlay {
+    __kind: 'Interlay'
+    value: AccountId32
+}
+
+export interface RedeemTo_Manta {
+    __kind: 'Manta'
+    value: AccountId32
+}
+
+export interface RedeemTo_Moonbeam {
+    __kind: 'Moonbeam'
+    value: H160
+}
+
+export interface RedeemTo_Native {
+    __kind: 'Native'
+    value: AccountId32
+}
+
+export type H160 = Bytes
+
+export type AccountId32 = Bytes
+
 export const CurrencyId: sts.Type<CurrencyId> = sts.closedEnum(() => {
     return  {
         BLP: sts.number(),
@@ -195,3 +244,5 @@ export interface CurrencyId_VToken2 {
     __kind: 'VToken2'
     value: number
 }
+
+export const AccountId32 = sts.bytes()

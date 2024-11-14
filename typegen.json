@@ -1,6 +1,38 @@
 {
   "outDir": "src/types",
   "specVersions": "https://v2.archive.subsquid.io/metadata/bifrost-polkadot",
-  "events": true,
-  "calls": true
+  "pallets": {
+    "Balances": {
+      "events": true,
+      "calls": true
+    },
+    "Farming": {
+      "events": true,
+      "calls": true
+    },
+    "LendMarket": {
+      "events": true,
+      "calls": true
+    },
+    "LeverageStaking": {
+      "events": true,
+      "calls": true
+    },
+    "StablePool": {
+      "events": true,
+      "calls": true
+    },
+    "VtokenMinting": {
+      "events": true,
+      "calls": true
+    },
+    "VtokenVoting": {
+      "events": true,
+      "calls": true
+    },
+    "ZenlinkProtocol": {
+      "events": true,
+      "calls": true
+    }
+  }
 }
