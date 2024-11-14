@@ -44,6 +44,8 @@ export function normalizeFarmingCallsArgs(call: Call): any {
     case farming.deposit.name:
       if (farming.deposit.v954.is(call)) {
         return farming.deposit.v954.decode(call);
+      } else if (farming.deposit.v14000.is(call)) {
+        return farming.deposit.v14000.decode(call);
       } else {
         throw new UnknownCallVersionError(call.name);
       }

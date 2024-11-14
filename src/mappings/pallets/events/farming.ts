@@ -62,6 +62,8 @@ export function normalizeFarmingEventsArgs(event: Event): any {
     case farming.deposited.name:
       if (farming.deposited.v954.is(event)) {
         return farming.deposited.v954.decode(event);
+      } else if (farming.deposited.v14000.is(event)) {
+        return farming.deposited.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }

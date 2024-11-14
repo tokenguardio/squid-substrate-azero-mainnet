@@ -18,6 +18,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.minted.v990.decode(event);
       } else if (vtokenMinting.minted.v12001.is(event)) {
         return vtokenMinting.minted.v12001.decode(event);
+      } else if (vtokenMinting.minted.v14000.is(event)) {
+        return vtokenMinting.minted.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -33,6 +35,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.redeemed.v990.decode(event);
       } else if (vtokenMinting.redeemed.v996.is(event)) {
         return vtokenMinting.redeemed.v996.decode(event);
+      } else if (vtokenMinting.redeemed.v14000.is(event)) {
+        return vtokenMinting.redeemed.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -48,6 +52,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.redeemSuccess.v990.decode(event);
       } else if (vtokenMinting.redeemSuccess.v10000.is(event)) {
         return vtokenMinting.redeemSuccess.v10000.decode(event);
+      } else if (vtokenMinting.redeemSuccess.v14000.is(event)) {
+        return vtokenMinting.redeemSuccess.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -61,6 +67,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.rebonded.v980.decode(event);
       } else if (vtokenMinting.rebonded.v990.is(event)) {
         return vtokenMinting.rebonded.v990.decode(event);
+      } else if (vtokenMinting.rebonded.v14000.is(event)) {
+        return vtokenMinting.rebonded.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -76,6 +84,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.rebondedByUnlockId.v990.decode(event);
       } else if (vtokenMinting.rebondedByUnlockId.v996.is(event)) {
         return vtokenMinting.rebondedByUnlockId.v996.decode(event);
+      } else if (vtokenMinting.rebondedByUnlockId.v14000.is(event)) {
+        return vtokenMinting.rebondedByUnlockId.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -91,6 +101,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.unlockDurationSet.v980.decode(event);
       } else if (vtokenMinting.unlockDurationSet.v990.is(event)) {
         return vtokenMinting.unlockDurationSet.v990.decode(event);
+      } else if (vtokenMinting.unlockDurationSet.v14000.is(event)) {
+        return vtokenMinting.unlockDurationSet.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -104,6 +116,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.minimumMintSet.v980.decode(event);
       } else if (vtokenMinting.minimumMintSet.v990.is(event)) {
         return vtokenMinting.minimumMintSet.v990.decode(event);
+      } else if (vtokenMinting.minimumMintSet.v14000.is(event)) {
+        return vtokenMinting.minimumMintSet.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -117,6 +131,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.minimumRedeemSet.v980.decode(event);
       } else if (vtokenMinting.minimumRedeemSet.v990.is(event)) {
         return vtokenMinting.minimumRedeemSet.v990.decode(event);
+      } else if (vtokenMinting.minimumRedeemSet.v14000.is(event)) {
+        return vtokenMinting.minimumRedeemSet.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -130,6 +146,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.supportRebondTokenAdded.v980.decode(event);
       } else if (vtokenMinting.supportRebondTokenAdded.v990.is(event)) {
         return vtokenMinting.supportRebondTokenAdded.v990.decode(event);
+      } else if (vtokenMinting.supportRebondTokenAdded.v14000.is(event)) {
+        return vtokenMinting.supportRebondTokenAdded.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -143,6 +161,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.supportRebondTokenRemoved.v980.decode(event);
       } else if (vtokenMinting.supportRebondTokenRemoved.v990.is(event)) {
         return vtokenMinting.supportRebondTokenRemoved.v990.decode(event);
+      } else if (vtokenMinting.supportRebondTokenRemoved.v14000.is(event)) {
+        return vtokenMinting.supportRebondTokenRemoved.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -170,6 +190,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.unlockingTotalSet.v980.decode(event);
       } else if (vtokenMinting.unlockingTotalSet.v990.is(event)) {
         return vtokenMinting.unlockingTotalSet.v990.decode(event);
+      } else if (vtokenMinting.unlockingTotalSet.v14000.is(event)) {
+        return vtokenMinting.unlockingTotalSet.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -185,6 +207,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
         return vtokenMinting.minTimeUnitSet.v980.decode(event);
       } else if (vtokenMinting.minTimeUnitSet.v990.is(event)) {
         return vtokenMinting.minTimeUnitSet.v990.decode(event);
+      } else if (vtokenMinting.minTimeUnitSet.v14000.is(event)) {
+        return vtokenMinting.minTimeUnitSet.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -210,6 +234,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
     case vtokenMinting.incentivizedMinting.name:
       if (vtokenMinting.incentivizedMinting.v10000.is(event)) {
         return vtokenMinting.incentivizedMinting.v10000.decode(event);
+      } else if (vtokenMinting.incentivizedMinting.v14000.is(event)) {
+        return vtokenMinting.incentivizedMinting.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -217,6 +243,8 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
     case vtokenMinting.vtokenIncentiveCoefSet.name:
       if (vtokenMinting.vtokenIncentiveCoefSet.v10000.is(event)) {
         return vtokenMinting.vtokenIncentiveCoefSet.v10000.decode(event);
+      } else if (vtokenMinting.vtokenIncentiveCoefSet.v14000.is(event)) {
+        return vtokenMinting.vtokenIncentiveCoefSet.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }
@@ -224,6 +252,15 @@ export function normalizeVtokenMintingEventsArgs(event: Event): any {
     case vtokenMinting.vtokenIncentiveLockBlocksSet.name:
       if (vtokenMinting.vtokenIncentiveLockBlocksSet.v10000.is(event)) {
         return vtokenMinting.vtokenIncentiveLockBlocksSet.v10000.decode(event);
+      } else if (vtokenMinting.vtokenIncentiveLockBlocksSet.v14000.is(event)) {
+        return vtokenMinting.vtokenIncentiveLockBlocksSet.v14000.decode(event);
+      } else {
+        throw new UnknownEventVersionError(event.name);
+      }
+
+    case vtokenMinting.setOngoingTimeUnit.name:
+      if (vtokenMinting.setOngoingTimeUnit.v14000.is(event)) {
+        return vtokenMinting.setOngoingTimeUnit.v14000.decode(event);
       } else {
         throw new UnknownEventVersionError(event.name);
       }

@@ -7,6 +7,7 @@ import * as v978 from '../v978'
 import * as v980 from '../v980'
 import * as v990 from '../v990'
 import * as v10000 from '../v10000'
+import * as v14000 from '../v14000'
 
 export const farmingPoolCreated =  {
     name: 'Farming.FarmingPoolCreated',
@@ -120,6 +121,26 @@ export const deposited =  {
             pid: sts.number(),
             addValue: sts.bigint(),
             gaugeInfo: sts.option(() => sts.tuple(() => [sts.bigint(), sts.number()])),
+        })
+    ),
+    /**
+     * The pool is deposited.
+     */
+    v14000: new EventType(
+        'Farming.Deposited',
+        sts.struct({
+            /**
+             * The exchanger who deposited the pool.
+             */
+            who: v14000.AccountId32,
+            /**
+             * Deposited pool id.
+             */
+            pid: sts.number(),
+            /**
+             * Deposited value.
+             */
+            addValue: sts.bigint(),
         })
     ),
 }

@@ -10,6 +10,7 @@ import * as v992 from '../v992'
 import * as v996 from '../v996'
 import * as v10000 from '../v10000'
 import * as v12001 from '../v12001'
+import * as v14000 from '../v14000'
 
 export const minted =  {
     name: 'VtokenMinting.Minted',
@@ -64,6 +65,42 @@ export const minted =  {
             vtokenAmount: sts.bigint(),
             fee: sts.bigint(),
             remark: sts.bytes(),
+            channelId: sts.option(() => sts.number()),
+        })
+    ),
+    /**
+     * Vtoken minted successfully.
+     */
+    v14000: new EventType(
+        'VtokenMinting.Minted',
+        sts.struct({
+            /**
+             * The minter account.
+             */
+            minter: v14000.AccountId32,
+            /**
+             * The currency id minted.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The currency amount minted.
+             */
+            currencyAmount: sts.bigint(),
+            /**
+             * The v_currency amount minted.
+             */
+            vCurrencyAmount: sts.bigint(),
+            /**
+             * The mint fee.
+             */
+            mintFee: sts.bigint(),
+            /**
+             * The remark of minting.
+             */
+            remark: sts.bytes(),
+            /**
+             * The channel id of minting.
+             */
             channelId: sts.option(() => sts.number()),
         })
     ),
@@ -122,6 +159,38 @@ export const redeemed =  {
             unlockId: sts.number(),
         })
     ),
+    /**
+     * 	Vtoken redeemed successfully.
+     */
+    v14000: new EventType(
+        'VtokenMinting.Redeemed',
+        sts.struct({
+            /**
+             * The redeemer account.
+             */
+            redeemer: v14000.AccountId32,
+            /**
+             * The currency id redeemed.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * Will be received currency amount.
+             */
+            currencyAmount: sts.bigint(),
+            /**
+             * The v_currency amount redeemed.
+             */
+            vCurrencyAmount: sts.bigint(),
+            /**
+             * The redeem fee.
+             */
+            redeemFee: sts.bigint(),
+            /**
+             * The unlock_id of redeeming.
+             */
+            unlockId: sts.number(),
+        })
+    ),
 }
 
 export const redeemSuccess =  {
@@ -171,6 +240,34 @@ export const redeemSuccess =  {
             tokenAmount: sts.bigint(),
         })
     ),
+    /**
+     * Process redeem successfully.
+     */
+    v14000: new EventType(
+        'VtokenMinting.RedeemSuccess',
+        sts.struct({
+            /**
+             * The redeemer account.
+             */
+            redeemer: v14000.AccountId32,
+            /**
+             * The unlock_id redeemed.
+             */
+            unlockId: sts.number(),
+            /**
+             * The currency id redeemed.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * Will transfer to this account.
+             */
+            to: v14000.RedeemTo,
+            /**
+             * The redeem amount.
+             */
+            currencyAmount: sts.bigint(),
+        })
+    ),
 }
 
 export const rebonded =  {
@@ -212,6 +309,34 @@ export const rebonded =  {
             tokenId: v990.CurrencyId,
             tokenAmount: sts.bigint(),
             vtokenAmount: sts.bigint(),
+            fee: sts.bigint(),
+        })
+    ),
+    /**
+     * Vtoken rebonded successfully.
+     */
+    v14000: new EventType(
+        'VtokenMinting.Rebonded',
+        sts.struct({
+            /**
+             * The rebonder account.
+             */
+            rebonder: v14000.AccountId32,
+            /**
+             * The currency id rebonded.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The currency amount rebonded.
+             */
+            currencyAmount: sts.bigint(),
+            /**
+             * The v_currency amount rebonded.
+             */
+            vCurrencyAmount: sts.bigint(),
+            /**
+             * Mint fee
+             */
             fee: sts.bigint(),
         })
     ),
@@ -270,6 +395,38 @@ export const rebondedByUnlockId =  {
             unlockId: sts.number(),
         })
     ),
+    /**
+     * Vtoken rebonded by unlock_id successfully.
+     */
+    v14000: new EventType(
+        'VtokenMinting.RebondedByUnlockId',
+        sts.struct({
+            /**
+             * The rebonder account.
+             */
+            rebonder: v14000.AccountId32,
+            /**
+             * The currency id rebonded.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The currency amount rebonded.
+             */
+            currencyAmount: sts.bigint(),
+            /**
+             * The v_currency amount rebonded.
+             */
+            vCurrencyAmount: sts.bigint(),
+            /**
+             * Mint fee
+             */
+            fee: sts.bigint(),
+            /**
+             * The unlock_id rebonded.
+             */
+            unlockId: sts.number(),
+        })
+    ),
 }
 
 export const unlockDurationSet =  {
@@ -309,6 +466,22 @@ export const unlockDurationSet =  {
             unlockDuration: v990.TimeUnit,
         })
     ),
+    /**
+     * Set unlock duration.
+     */
+    v14000: new EventType(
+        'VtokenMinting.UnlockDurationSet',
+        sts.struct({
+            /**
+             * The currency id set unlock duration.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The unlock duration set.
+             */
+            unlockDuration: v14000.TimeUnit,
+        })
+    ),
 }
 
 export const minimumMintSet =  {
@@ -339,6 +512,22 @@ export const minimumMintSet =  {
         sts.struct({
             tokenId: v990.CurrencyId,
             amount: sts.bigint(),
+        })
+    ),
+    /**
+     * Set minimum mint amount.
+     */
+    v14000: new EventType(
+        'VtokenMinting.MinimumMintSet',
+        sts.struct({
+            /**
+             * The currency id set minimum mint amount.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The minimum mint amount set.
+             */
+            minimumAmount: sts.bigint(),
         })
     ),
 }
@@ -373,6 +562,22 @@ export const minimumRedeemSet =  {
             amount: sts.bigint(),
         })
     ),
+    /**
+     * Set minimum redeem amount.
+     */
+    v14000: new EventType(
+        'VtokenMinting.MinimumRedeemSet',
+        sts.struct({
+            /**
+             * The currency id set minimum redeem amount.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The minimum redeem amount set.
+             */
+            minimumAmount: sts.bigint(),
+        })
+    ),
 }
 
 export const supportRebondTokenAdded =  {
@@ -401,6 +606,18 @@ export const supportRebondTokenAdded =  {
             tokenId: v990.CurrencyId,
         })
     ),
+    /**
+     * Support rebond token added.
+     */
+    v14000: new EventType(
+        'VtokenMinting.SupportRebondTokenAdded',
+        sts.struct({
+            /**
+             * The currency id support rebond.
+             */
+            currencyId: v14000.CurrencyId,
+        })
+    ),
 }
 
 export const supportRebondTokenRemoved =  {
@@ -427,6 +644,18 @@ export const supportRebondTokenRemoved =  {
         'VtokenMinting.SupportRebondTokenRemoved',
         sts.struct({
             tokenId: v990.CurrencyId,
+        })
+    ),
+    /**
+     * Support rebond token removed.
+     */
+    v14000: new EventType(
+        'VtokenMinting.SupportRebondTokenRemoved',
+        sts.struct({
+            /**
+             * The currency id remove support rebond.
+             */
+            currencyId: v14000.CurrencyId,
         })
     ),
 }
@@ -485,6 +714,22 @@ export const unlockingTotalSet =  {
             amount: sts.bigint(),
         })
     ),
+    /**
+     * Set unlock total amount.
+     */
+    v14000: new EventType(
+        'VtokenMinting.UnlockingTotalSet',
+        sts.struct({
+            /**
+             * The currency id set unlock total amount.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The unlock total amount set.
+             */
+            currencyAmount: sts.bigint(),
+        })
+    ),
 }
 
 export const minTimeUnitSet =  {
@@ -522,6 +767,22 @@ export const minTimeUnitSet =  {
         sts.struct({
             tokenId: v990.CurrencyId,
             timeUnit: v990.TimeUnit,
+        })
+    ),
+    /**
+     * Set minimum time unit.
+     */
+    v14000: new EventType(
+        'VtokenMinting.MinTimeUnitSet',
+        sts.struct({
+            /**
+             * The currency id set minimum time unit.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The minimum time unit set.
+             */
+            timeUnit: v14000.TimeUnit,
         })
     ),
 }
@@ -571,6 +832,19 @@ export const incentivizedMinting =  {
             incentiveVtokenAmount: sts.bigint(),
         })
     ),
+    /**
+     * Incentivized minting.
+     */
+    v14000: new EventType(
+        'VtokenMinting.IncentivizedMinting',
+        sts.struct({
+            address: v14000.AccountId32,
+            currencyId: v14000.CurrencyId,
+            currencyAmount: sts.bigint(),
+            lockedVtokenAmount: sts.bigint(),
+            incentiveVtokenAmount: sts.bigint(),
+        })
+    ),
 }
 
 export const vtokenIncentiveCoefSet =  {
@@ -579,6 +853,16 @@ export const vtokenIncentiveCoefSet =  {
         'VtokenMinting.VtokenIncentiveCoefSet',
         sts.struct({
             vtokenId: v10000.CurrencyId,
+            coefficient: sts.option(() => sts.bigint()),
+        })
+    ),
+    /**
+     * Incentive coefficient set.
+     */
+    v14000: new EventType(
+        'VtokenMinting.VtokenIncentiveCoefSet',
+        sts.struct({
+            vCurrencyId: v14000.CurrencyId,
             coefficient: sts.option(() => sts.bigint()),
         })
     ),
@@ -591,6 +875,36 @@ export const vtokenIncentiveLockBlocksSet =  {
         sts.struct({
             vtokenId: v10000.CurrencyId,
             blocks: sts.option(() => sts.number()),
+        })
+    ),
+    /**
+     * Incentive lock blocks set.
+     */
+    v14000: new EventType(
+        'VtokenMinting.VtokenIncentiveLockBlocksSet',
+        sts.struct({
+            vCurrencyId: v14000.CurrencyId,
+            blocks: sts.option(() => sts.number()),
+        })
+    ),
+}
+
+export const setOngoingTimeUnit =  {
+    name: 'VtokenMinting.SetOngoingTimeUnit',
+    /**
+     * Set ongoing time unit.
+     */
+    v14000: new EventType(
+        'VtokenMinting.SetOngoingTimeUnit',
+        sts.struct({
+            /**
+             * The currency id set ongoing time unit.
+             */
+            currencyId: v14000.CurrencyId,
+            /**
+             * The ongoing time unit set.
+             */
+            timeUnit: v14000.TimeUnit,
         })
     ),
 }
