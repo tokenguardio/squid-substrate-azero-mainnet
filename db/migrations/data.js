@@ -18,7 +18,7 @@ module.exports = class Data {
         "contract" text NOT NULL, 
         "success" boolean, 
         "type" character varying(5) NOT NULL, 
-        "name" text NOT NULL, 
+        "name" text, 
         "value" numeric, 
         "decoded_args" jsonb, 
         CONSTRAINT "PK_${dappId}" PRIMARY KEY ("id")
